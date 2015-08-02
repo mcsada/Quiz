@@ -13,6 +13,8 @@
     <% } else { %>
         "<%= quiz.respuesta %>"
     <% } %>
-/><p>
+/>
+<select id=tema name="quiz[tema]"><% include_selectema.ejs %></select>
+<p>
 <a href="/quizes"><button type="button">Cancelar</button></a>
 <input type="submit" value="Salvar">

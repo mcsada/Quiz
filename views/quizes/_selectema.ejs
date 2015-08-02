@@ -1,0 +1,11 @@
+<% var temas=["Otro", "Humanidades", "Ocio", "Ciencia", "Tecnología"];
+
+var i; for (i = 0; i < temas.length; i++) {
+	var stema ="";
+	if (typeof quiz != 'undefined') {stema = quiz.tema||""};
+	var selected = (stema === temas[i])?"selected":"";
+%>
+
+
+<option value="<%= temas[i] %>" <%= selected %>><%= temas[i] %></option>
+<% } %>

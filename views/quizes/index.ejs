@@ -1,7 +1,22 @@
+<form method="get" action="/quizes">
+	Buscar:
+	<input type="text" name="search" placeholder="Buscar"/>
+	<input type ="submit" value="Buscar"/>
+	Tema:
+	<select id="tema" name="tema">
+		<option value="" selected></option>
+		<% include _selectema.ejs %>
+	</select>
+	<input type="submit" value="Ver"/>
+</form>
+
+</br>
+
 <table>
  	<% var i; for (i=0; i < quizes.length; i++) { %>
 		 <tr>
 		 	<td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+		 	<td><a href="/quizes?tema<%= quizes[i].tema %>"><%= quizes[i].tema %></a></td>
 		 	<td><a href="/quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
 		 	<td>
 		 		<form method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
